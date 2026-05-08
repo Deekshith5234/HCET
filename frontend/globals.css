@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Ultra-High Contrast Minimalist Grey Palette */
+  --color-bg: #f8f9fa;
+  --color-primary: #1a1c1e;
+  --color-accent: #000000;
+  --color-text: #000000;
+  --color-text-muted: #333333;
+  --color-glass: rgba(255, 255, 255, 0.98);
+  --color-border: #1a1c1e; /* Dark solid borders */
+  --color-glow-primary: rgba(0, 0, 0, 0.05);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .font-heading {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.bg-grid {
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.05) 1.5px, transparent 1.5px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1.5px, transparent 1.5px);
+  background-size: 40px 40px;
+}
+
+.bg-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3%3Ffilter id='noiseFilter'%3E%3FfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3F/filter%3E%3Frect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3F/svg%3E");
+  opacity: 0.03;
+  pointer-events: none;
+}
+
+.glass-card {
+  background: var(--color-glass);
+  backdrop-filter: blur(20px);
+  border: 2px solid var(--color-border);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #000000, #4a4a4a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.container-mobile {
+  @apply max-w-7xl mx-auto px-6 md:px-12;
+}
+
+.btn-primary {
+  @apply relative overflow-hidden bg-black text-white rounded-2xl px-8 py-4 font-black transition-all hover:scale-[1.02] active:scale-[0.98] shadow-2xl shadow-black/20;
+}
+
+.btn-secondary {
+  @apply bg-white text-black border-[3px] border-black rounded-2xl px-8 py-4 font-black transition-all hover:bg-stone-50 active:scale-[0.98];
+}
+
+.app-input {
+  @apply w-full bg-white border-[3px] border-stone-300 rounded-2xl px-6 py-4 text-black focus:outline-none focus:border-black transition-all placeholder:text-stone-500 font-black;
+}
+
+.app-select {
+  @apply w-full bg-white border-[3px] border-stone-300 rounded-2xl px-6 py-4 text-black focus:outline-none focus:border-black appearance-none cursor-pointer font-black;
+}
+
+/* MAXIMUM VISIBILITY LABEL */
+.app-label {
+  @apply text-[12px] font-black uppercase tracking-[0.1em] text-black mb-3 block;
+}
+
+/* Tab Active State */
+.tab-active {
+  background: black;
+  color: white;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1a1c1e;
+  border-radius: 10px;
+  border: 3px solid #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #000000;
+}
